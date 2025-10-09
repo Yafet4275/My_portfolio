@@ -44,17 +44,17 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "john.doe@example.com"
+      value: "yafetlopez4275@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567"
+      value: "+1 (417) 236-6778"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA"
+      value: "Sarcoxie MO, USA"
     }
   ];
 

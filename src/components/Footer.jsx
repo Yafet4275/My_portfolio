@@ -11,17 +11,17 @@ const Footer = () => {
           <div className="flex items-center gap-2 text-gray-400">
             <span>Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-            <span>by John Doe</span>
+            <span>by Yafet Lopez</span>
           </div>
 
           <div className="flex gap-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="https://github.com/Yafet4275" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
               <Github className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="https://www.linkedin.com/in/yafet-lopez-8b177886/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="mailto:john@example.com" className="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="mailto:yafetlopez4275@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
