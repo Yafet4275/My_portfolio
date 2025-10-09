@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import my_pricture from './imgs/picture.jpg';
+// import my_pricture from './imgs/picture.jpg';
+import my_pricture from '../assets/imgs/picture.jpg';
 // import picture from './picture.jpg';
 
 const Hero = () => {
