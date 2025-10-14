@@ -4,40 +4,43 @@ import { Briefcase, Calendar } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
-    {
-      title: "Senior Software Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      description: "Leading development of scalable web applications, mentoring junior developers, and implementing best practices across the team.",
-      achievements: [
-        "Improved application performance by 40%",
-        "Led migration to microservices architecture",
-        "Mentored 5 junior developers"
-      ]
-    },
-    {
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      description: "Developed and maintained multiple client projects using React, Node.js, and cloud technologies.",
-      achievements: [
-        "Delivered 15+ successful projects",
-        "Reduced deployment time by 60%",
-        "Implemented CI/CD pipelines"
-      ]
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2019 - 2020",
-      description: "Contributed to frontend development and learned modern web development practices.",
-      achievements: [
-        "Built responsive user interfaces",
-        "Collaborated with design team",
-        "Participated in code reviews"
-      ]
-    }
-  ];
+  {
+    title: "Freelance Software Developer",
+    company: "Independent / Remote",
+    period: "Jun 2021 – Present",
+    description:
+      "Building AI-powered, full-stack solutions across finance, manufacturing, and automation industries.",
+    achievements: [
+      "Developed algorithmic trading bots and market prediction tools using Python, TensorFlow, and Binance API.",
+      "Built enterprise-grade applications with Django, FastAPI, and React.",
+      "Deployed and containerized systems using Docker and Kubernetes.",
+      "Designed PLC and IoT automation systems integrating real and simulated data streams."
+    ]
+  },
+  {
+    title: "Maintenance Technician",
+    company: "Monett Metals Industrial",
+    period: "Jan 2020 – Aug 2022",
+    description:
+      "Performed maintenance and PLC programming for industrial manufacturing systems.",
+    achievements: [
+      "Implemented automation processes to reduce downtime by 30%.",
+      "Maintained and programmed complex electrical control systems."
+    ]
+  },
+  {
+    title: "Telecommunications Analyst",
+    company: "Corporacion Nacional de Telecomunicaciones (CNT)",
+    period: "Oct 2013 – Jun 2015",
+    description:
+      "Oversaw network systems, configured routers, and optimized data connectivity.",
+    achievements: [
+      "Ensured network uptime exceeding 99%.",
+      "Led small team in upgrading communication infrastructure."
+    ]
+  }
+];
+
 
   return (
     <section id="experience" className="py-20 px-4 bg-black/20">

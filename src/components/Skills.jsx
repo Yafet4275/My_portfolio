@@ -1,42 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      category: "Frontend",
-      skills: [
-        { name: "React", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "HTML/CSS", level: 95 }
-      ]
-    },
-    {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Express", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "REST APIs", level: 90 }
-      ]
-    },
-    {
-      category: "Tools & Others",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Figma", level: 80 },
-        { name: "Agile/Scrum", level: 85 }
+const skillCategories = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React / Next.js", level: 95 },
+      { name: "JavaScript / TypeScript", level: 90 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "HTML5 / CSS3", level: 95 },
+      { name: "Responsive UI Design", level: 90 }
+    ]
+  },
+  {
+    category: "Backend & API",
+    skills: [
+      { name: "Python / FastAPI / Django", level: 95 },
+      { name: "Node.js / Express", level: 85 },
+      { name: "REST / GraphQL APIs", level: 90 },
+      { name: "SQL / PostgreSQL / MongoDB", level: 85 },
+      { name: "Microservices Architecture", level: 88 }
+    ]
+  },
+  {
+    category: "AI, Cloud & DevOps",
+    skills: [
+      { name: "Machine Learning (Scikit-learn, TensorFlow, PyTorch)", level: 90 },
+      { name: "Algorithmic Trading / Binance API", level: 92 },
+      { name: "Docker / Kubernetes / CI/CD", level: 88 },
+      { name: "AWS / Cloud Deployment", level: 80 },
+      { name: "Git / GitHub Actions", level: 90 }
       ]
     }
   ];
-
-  return (
-    <section id="skills" className="py-20 px-4">
+  
+  function Skills() {
+    return (
+      <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,6 +90,6 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Skills;
