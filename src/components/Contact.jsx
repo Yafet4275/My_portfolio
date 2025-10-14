@@ -46,11 +46,11 @@ const Contact = () => {
       label: "Email",
       value: "yafetlopez4275@gmail.com"
     },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (417) 236-6778"
-    },
+    // {
+    //   icon: Phone,
+    //   label: "Phone",
+    //   value: "+1 (417) 236-6778"
+    // },
     {
       icon: MapPin,
       label: "Location",
