@@ -16,76 +16,150 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const recaptchaSiteKey = "6LcyC-orAAAAAJwRQaq74ebp5XO75d4lDRheVabT"; // Replace with your actual site key
+  const recaptchaSiteKey = "6LcyC-orAAAAAJwRQaq74ebp5XO75d4lDRheVabT"; // This is for lopeztel.com
+  // const recaptchaSiteKey = "6LdaMuorAAAAAK419Sdm2QydemD9-m-eyZtY8bZQ"; // This is for localhost
   
 
-  // ✅ Load Google reCAPTCHA script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+  
 
-   // ✅ reCAPTCHA callback
-  const onCaptchaSuccess = (token) => {
+  // // ✅ Load Google reCAPTCHA script
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://www.google.com/recaptcha/api.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // }, []);
+
+  //  // ✅ reCAPTCHA callback
+  // const onCaptchaSuccess = (token) => {
+  //   setCaptchaToken(token);
+  // };
+
+
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  document.body.appendChild(script);
+
+  // ✅ Make your callback globally accessible to reCAPTCHA
+  window.onCaptchaSuccess = (token) => {
     setCaptchaToken(token);
   };
-  
-  // ✅ Send email handler
-  const sendEmail = (e) => {
-    e.preventDefault();
+}, []);
 
-    if (!name || !email || !message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all fields before submitting.",
-        variant: "destructive",
-      });
-      return;
-    }
 
-    const recaptchaValue = document.querySelector(".g-recaptcha-response").value;
-    if (!recaptchaValue) {
-      toast({
-        title: "reCAPTCHA Required",
-        description: "Please verify that you are not a robot.",
-        variant: "destructive",
-      });
-      return;
-    }
+const sendEmail = (e) => {
+  e.preventDefault();
 
-    setSending(true);
+  if (!name || !email || !message) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all fields before submitting.",
+      variant: "destructive",
+    });
+    return;
+  }
 
-    const templateParams = {
-      name,
-      email,
-      message,
-    };
+  if (!captchaToken) {
+    toast({
+      title: "reCAPTCHA Required",
+      description: "Please verify that you are not a robot.",
+      variant: "destructive",
+    });
+    return;
+  }
 
-    emailjs
-      .send("service_ae85uad", "template_c7zyach", templateParams, "LucRYRVJY9RNO9T5g")
-      .then(() => {
-        toast({
-          title: "Message Sent! 🎉",
-          description: "Thanks for reaching out! I'll get back to you soon.",
-        });
-        setName("");
-        setEmail("");
-        setMessage("");
-        setSending(false);
-        window.grecaptcha.reset();
-      })
-      .catch((err) => {
-        console.error("FAILED...", err);
-        toast({
-          title: "Error Sending Message",
-          description: "Something went wrong. Please try again later.",
-          variant: "destructive",
-        });
-        setSending(false);
-      });
+  setSending(true);
+
+  const templateParams = {
+    name,
+    email,
+    message,
+    // optional: add captchaToken for your backend if you later verify it
   };
+
+  emailjs
+    .send("service_ae85uad", "template_c7zyach", templateParams, "LucRYRVJY9RNO9T5g")
+    .then(() => {
+      toast({
+        title: "Message Sent! 🎉",
+        description: "Thanks for reaching out! I'll get back to you soon.",
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+      setCaptchaToken("");
+      setSending(false);
+      window.grecaptcha.reset();
+    })
+    .catch((err) => {
+      console.error("FAILED...", err);
+      toast({
+        title: "Error Sending Message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+      setSending(false);
+    });
+};
+
+
+  
+  // // ✅ Send email handler
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   if (!name || !email || !message) {
+  //     toast({
+  //       title: "Missing Information",
+  //       description: "Please fill in all fields before submitting.",
+  //       variant: "destructive",
+  //     });
+  //     return;
+  //   }
+
+  //   const recaptchaValue = document.querySelector(".g-recaptcha-response").value;
+  //   if (!recaptchaValue) {
+  //     toast({
+  //       title: "reCAPTCHA Required",
+  //       description: "Please verify that you are not a robot.",
+  //       variant: "destructive",
+  //     });
+  //     return;
+  //   }
+
+  //   setSending(true);
+
+  //   const templateParams = {
+  //     name,
+  //     email,
+  //     message,
+  //   };
+
+  //   emailjs
+  //     .send("service_ae85uad", "template_c7zyach", templateParams, "LucRYRVJY9RNO9T5g")
+  //     .then(() => {
+  //       toast({
+  //         title: "Message Sent! 🎉",
+  //         description: "Thanks for reaching out! I'll get back to you soon.",
+  //       });
+  //       setName("");
+  //       setEmail("");
+  //       setMessage("");
+  //       setSending(false);
+  //       window.grecaptcha.reset();
+  //     })
+  //     .catch((err) => {
+  //       console.error("FAILED...", err);
+  //       toast({
+  //         title: "Error Sending Message",
+  //         description: "Something went wrong. Please try again later.",
+  //         variant: "destructive",
+  //       });
+  //       setSending(false);
+  //     });
+  // };
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "yafetlopez4275@gmail.com" },
@@ -183,7 +257,8 @@ const Contact = () => {
                 />
               </div>
               {/* reCAPTCHA widget */}
-              <div className="g-recaptcha" data-sitekey={recaptchaSiteKey} data-callback="onCaptchaSuccess"></div>
+              <div className="g-recaptcha" data-sitekey={recaptchaSiteKey} data-callback="onCaptchaSuccess"/>
+
               <Button
                 type="submit"
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
