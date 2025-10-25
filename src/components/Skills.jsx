@@ -9,7 +9,8 @@ const skillCategories = [
       { name: "JavaScript / TypeScript", level: 90 },
       { name: "Tailwind CSS", level: 90 },
       { name: "HTML5 / CSS3", level: 95 },
-      { name: "Responsive UI Design", level: 90 }
+      { name: "Responsive UI Design", level: 90 },
+      { name: "reCAPTCHA v3", level: 95 }
     ]
   },
   {
