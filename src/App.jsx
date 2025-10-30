@@ -8,11 +8,10 @@ import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
-import Birthday from './components/Birthdays';
+import Birthday from '@/components/Birthdays';
 import { Routes, Route } from 'react-router-dom';
-import NotFound from './components/NotFound';
-
-
+import NotFound from '@/components/NotFound';
+import Layout from '@/components/Layout';
 
 
 function App() {
@@ -35,11 +34,16 @@ function App() {
             <Toaster />
           </div>
         } />
-        <Route path="/birthdays" element={<Birthday />} />
+        <Route path="/birthdays" element={
+  <Layout>
+    <Birthday />
+  </Layout>
+} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
+
 
 export default App;
