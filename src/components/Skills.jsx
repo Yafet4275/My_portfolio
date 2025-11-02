@@ -41,11 +41,11 @@ const skillCategories = [
       { name: "Docker / Kubernetes / CI/CD", level: 88 },
       { name: "Cloud Deployment", level: 80 },
       { name: "Git / GitHub Actions", level: 90 },
-      { name: "Linux Server Management", level: 85 }
-      { name: "ChatGPT API Integration", level: 90 }
+      { name: "Linux Server Management", level: 85 },
+      { name: "ChatGPT API Integration", level: 90 },
       { name: "Automate tool N8N", level: 20 }
     ]
-  };
+  }];
   
   function Skills() {
     return (
