@@ -19,21 +19,33 @@ const skillCategories = [
       { name: "Python / FastAPI / Django", level: 95 },
       { name: "Node.js / Express", level: 85 },
       { name: "REST / GraphQL APIs", level: 90 },
-      { name: "SQL / PostgreSQL / MongoDB", level: 85 },
+      { name: "SQL / SQLite /PostgreSQL / MongoDB", level: 85 },
       { name: "Microservices Architecture", level: 88 }
+    ]
+  },
+   {
+    category: "Cryptocurrencies & Blockchain",
+    skills: [
+      { name: "Smart Contracts (Solidity)", level: 40 },
+      { name: "Web3.js / Ethers.js", level: 25 },
+      { name: "DeFi & NFT Development", level: 35 },
+      { name: "Blockchain Integration", level: 30 }
+      
     ]
   },
   {
     category: "AI, Cloud & DevOps",
     skills: [
       { name: "Machine Learning (Scikit-learn, TensorFlow, PyTorch)", level: 90 },
-      { name: "Algorithmic Trading / Binance API", level: 92 },
+      { name: "Algorithmic Trading / Binance API, Kucoin", level: 92 },
       { name: "Docker / Kubernetes / CI/CD", level: 88 },
-      { name: "AWS / Cloud Deployment", level: 80 },
-      { name: "Git / GitHub Actions", level: 90 }
-      ]
-    }
-  ];
+      { name: "Cloud Deployment", level: 80 },
+      { name: "Git / GitHub Actions", level: 90 },
+      { name: "Linux Server Management", level: 85 }
+      { name: "ChatGPT API Integration", level: 90 }
+      { name: "Automate tool N8N", level: 20 }
+    ]
+  };
   
   function Skills() {
     return (

@@ -10,7 +10,7 @@ function Birthday() {
     // const url = "/birthday_output.json";
     // Option 2: If using n8n HTTP Response node (webhook)
     const url_n8n = "http://localhost:5678/webhook/birthday"; 
-    const url = "http://localhost:8000/birthdays";
+    const url = "http://localhost:8500/birthdays";
     const VPS_url = "http://lopeztel.com/api/birthdays";
 
     fetch(url)
